@@ -101,7 +101,7 @@ class _ProductFormScreenState extends State<ProductFormScreen> {
           title: Text('Ocorreu um error!'),
           content: Text('Ocorreu um erro pra salvar o produto'),
           actions: [
-            FlatButton(
+            ElevatedButton(
               child: Text('Fechar'),
               onPressed: () => Navigator.of(context).pop(),
             )

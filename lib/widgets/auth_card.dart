@@ -34,7 +34,7 @@ class _AuthCardState extends State<AuthCard> {
         title: Text("Ocorreu um erro!"),
         content: Text(msg),
         actions: [
-          FlatButton(
+          ElevatedButton(
             child: Text("Fechar"),
             onPressed: () {
               Navigator.of(context).pop();
@@ -167,12 +167,15 @@ class _AuthCardState extends State<AuthCard> {
                       _authMode == AuthMode.Login ? 'ENTRAR' : 'REGISTRAR'),
                   onPressed: _submit,
                 ),
-              FlatButton(
+              ElevatedButton(
                 child: Text(
                   'ALTERNAR P/ ${_authMode == AuthMode.Login ? 'REGISTRAR' : 'ENTRAR'}',
                 ),
                 onPressed: _switchAuthMode,
-                textColor: Theme.of(context).primaryColor,
+                style: ButtonStyle(
+                  textStyle: MaterialStateProperty.all<TextStyle>(
+                      TextStyle(color: Colors.purple)),
+                ),
               ),
             ],
           ),

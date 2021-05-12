@@ -9,7 +9,6 @@ class ProductItem extends StatelessWidget {
   ProductItem(this.product);
   @override
   Widget build(BuildContext context) {
-    final scarffold = Scaffold.of(context);
     return ListTile(
       leading: CircleAvatar(
         backgroundImage: NetworkImage(product.imageUrl),
@@ -38,11 +37,11 @@ class ProductItem extends StatelessWidget {
                   builder: (ctx) => AlertDialog(
                     title: Text('Você tem certeza, quer deletar esse produto?'),
                     actions: [
-                      FlatButton(
+                      ElevatedButton(
                         child: Text('Não'),
                         onPressed: () => Navigator.of(context).pop(false),
                       ),
-                      FlatButton(
+                      ElevatedButton(
                         child: Text('Sim'),
                         onPressed: () => Navigator.of(context).pop(true),
                       ),
@@ -54,7 +53,7 @@ class ProductItem extends StatelessWidget {
                       await Provider.of<Products>(context, listen: false)
                           .deleteProduct(product.id);
                     } catch (error) {
-                      scarffold.showSnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(error.toString()),
                         ),

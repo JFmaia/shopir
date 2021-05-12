@@ -20,7 +20,7 @@ class _OrdersButtonState extends State<OrdersButton> {
   bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return ElevatedButton(
       child: _isLoading
           ? CircularProgressIndicator()
           : Text(
