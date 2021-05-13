@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/exceptions/auth_exception.dart';
@@ -153,19 +154,27 @@ class _AuthCardState extends State<AuthCard> {
               if (_isLoading)
                 CircularProgressIndicator()
               else
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  color: Theme.of(context).primaryColor,
-                  textColor: Theme.of(context).primaryTextTheme.button.color,
-                  padding: EdgeInsets.symmetric(
+                Padding(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 30,
                     vertical: 8,
                   ),
-                  child: Text(
-                      _authMode == AuthMode.Login ? 'ENTRAR' : 'REGISTRAR'),
-                  onPressed: _submit,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.purple),
+                      shape: MaterialStateProperty.all<OutlinedBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      textStyle: MaterialStateProperty.all<TextStyle>(
+                          TextStyle(color: Colors.purple)),
+                    ),
+                    child: Text(
+                        _authMode == AuthMode.Login ? 'ENTRAR' : 'REGISTRAR'),
+                    onPressed: _submit,
+                  ),
                 ),
               ElevatedButton(
                 child: Text(
