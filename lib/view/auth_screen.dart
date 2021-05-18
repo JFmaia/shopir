@@ -10,7 +10,16 @@ class AuthScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.deepPurple.shade400,
+                  Colors.yellow.shade50,
+                ],
+              ),
+            ),
           ),
           SingleChildScrollView(
             child: Container(
@@ -40,7 +49,7 @@ class AuthScreen extends StatelessWidget {
                       ],
                     ),
                     child: Text(
-                      "Minha Loja",
+                      "Shopir",
                       style: TextStyle(
                         color:
                             Theme.of(context).accentTextTheme.headline6.color,
