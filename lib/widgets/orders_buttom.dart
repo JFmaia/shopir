@@ -26,7 +26,9 @@ class _OrdersButtonState extends State<OrdersButton> {
           : Text(
               'COMPRAR',
               style: TextStyle(
-                color: Theme.of(context).primaryColor,
+                color: widget.cart.totalAmount == 0
+                    ? Theme.of(context).primaryColor
+                    : Colors.white,
               ),
             ),
       onPressed: widget.cart.totalAmount == 0
