@@ -33,7 +33,7 @@ class _ProductGridItemState extends State<ProductGridItem> {
           ),
         ),
         footer: GridTileBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           leading: Consumer<Product>(
             builder: (context, product, _) => IconButton(
               icon: Icon(
